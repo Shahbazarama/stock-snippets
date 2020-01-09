@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Search from './Components/Search.jsx'
+import Feed from './Components/Feed.jsx'
 
-function App() {
+import { Container, Col, Row, Navbar } from 'react-bootstrap'
+
+export default function App(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <Container style={{ paddingBottom: '60px'}}>
+      <Navbar fixed="top" className="justify-content-between" bg="dark" expand="lg">
+        <Navbar.Brand bg="light">Stock Snippets</Navbar.Brand>
+        <Search />
+      </Navbar>
+    </Container>
 
-export default App;
+    <Container>
+      <Row>
+        <Col>
+
+          <Feed />
+        </Col>
+
+      </Row>
+    </Container>
+    </>
+  )
+}
