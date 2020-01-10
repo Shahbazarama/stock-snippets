@@ -6,12 +6,12 @@ import ReactHtmlParser from 'react-html-parser';
 
 export default function Tweet({ content }){
   let tweetText = content.body
-  const mediaStyling = {borderBottomStyle: 'solid', paddingBottom: '4px'}
   const variablesUsed = content.symbols.map(symbol => symbol.symbol)
   for(let i = 0; i < variablesUsed.length; i++){
     tweetText = tweetText.replace('$' + variablesUsed[i], `<a target="_blank" href="http://stocktwits.com/symbol/${variablesUsed[i]}">$${variablesUsed[i]}</a>`);
   }
-  console.log(tweetText)
+  
+  const mediaStyling = {borderBottomStyle: 'solid', paddingBottom: '4px'}
   return (
     <Media style={mediaStyling} as="li">
     <img
@@ -23,13 +23,10 @@ export default function Tweet({ content }){
     />
     <Media.Body>
       <h5>{content.user.name}</h5>
-
         <Linkify>{ ReactHtmlParser(tweetText) }</Linkify>
-
       <br></br>
       <small>{new Date(content.created_at).toLocaleString()}</small>
     </Media.Body>
   </Media>
-
   )
 }
