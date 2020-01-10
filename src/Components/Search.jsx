@@ -2022,7 +2022,7 @@ export default function Search({ callback }){
       // call api for each search term
       const allTweets = []
 
-      Promise.all(splitSearch.map(stock=>fetch(`https://api.stocktwits.com/api/2/streams/symbol/${stock}.json`))).then(responses =>
+      Promise.all(splitSearch.map(stock => fetch(`https://cors-anywhere.herokuapp.com/https://api.stocktwits.com/api/2/streams/symbol/${stock}.json`))).then(responses =>
         Promise.all(responses.map(res => res.json()))
       ).then(data => {
         console.log(data)
