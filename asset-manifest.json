@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/stock-snippets/static/js/main.e95980ef.chunk.js",
-    "main.js.map": "/stock-snippets/static/js/main.e95980ef.chunk.js.map",
+    "main.js": "/stock-snippets/static/js/main.a2da17d0.chunk.js",
+    "main.js.map": "/stock-snippets/static/js/main.a2da17d0.chunk.js.map",
     "runtime-main.js": "/stock-snippets/static/js/runtime-main.5d84a1c9.js",
     "runtime-main.js.map": "/stock-snippets/static/js/runtime-main.5d84a1c9.js.map",
     "static/js/2.fa90cce7.chunk.js": "/stock-snippets/static/js/2.fa90cce7.chunk.js",
     "static/js/2.fa90cce7.chunk.js.map": "/stock-snippets/static/js/2.fa90cce7.chunk.js.map",
     "index.html": "/stock-snippets/index.html",
-    "precache-manifest.175dd5f592dcc5c214da06d38b521b64.js": "/stock-snippets/precache-manifest.175dd5f592dcc5c214da06d38b521b64.js",
+    "precache-manifest.d80c05c4e2335b67f7f04a95ed679a78.js": "/stock-snippets/precache-manifest.d80c05c4e2335b67f7f04a95ed679a78.js",
     "service-worker.js": "/stock-snippets/service-worker.js",
     "static/js/2.fa90cce7.chunk.js.LICENSE": "/stock-snippets/static/js/2.fa90cce7.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.5d84a1c9.js",
     "static/js/2.fa90cce7.chunk.js",
-    "static/js/main.e95980ef.chunk.js"
+    "static/js/main.a2da17d0.chunk.js"
   ]
 }
