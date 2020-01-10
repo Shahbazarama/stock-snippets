@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Search from './Components/Search.jsx'
 import Feed from './Components/Feed.jsx'
 
 import { Container, Col, Row, Navbar } from 'react-bootstrap'
 
 export default function App(){
+
+  const [data, setData] = useState([]);
+
   return (
     <>
-    <Container style={{ paddingBottom: '60px'}}>
-      <Navbar fixed="top" className="justify-content-between" bg="dark" expand="lg">
+      <Navbar className="justify-content-between" bg="dark" variant="dark" expand="lg">
         <Navbar.Brand bg="light">Stock Snippets</Navbar.Brand>
-        <Search />
+        <Search callback={setData}/>
       </Navbar>
-    </Container>
 
     <Container>
       <Row>
         <Col>
-
-          <Feed />
+          {data.length == 0 ? <h3>Search for a stock or two!</h3> : <></>}
+          <Feed data={data}/>
         </Col>
 
       </Row>

@@ -1,19 +1,35 @@
 import React from 'react'
-import { Card } from 'react-bootstrap'
+import { Media, Row, Col } from 'react-bootstrap'
+import Linkify from 'react-linkify'
+import CashtagLink from 'stocktwits-react-text-js'
+import ReactHtmlParser from 'react-html-parser';
 
-export default function Tweet(){
+export default function Tweet({ content }){
+  let tweetText = content.body
+  const mediaStyling = {borderBottomStyle: 'solid', paddingBottom: '4px'}
+  const variablesUsed = content.symbols.map(symbol => symbol.symbol)
+  for(let i = 0; i < variablesUsed.length; i++){
+    tweetText = tweetText.replace('$' + variablesUsed[i], `<a target="_blank" href="http://stocktwits.com/symbol/${variablesUsed[i]}">$${variablesUsed[i]}</a>`);
+  }
+  console.log(tweetText)
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content.
-        </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
-      </Card.Body>
-    </Card>
+    <Media style={mediaStyling} as="li">
+    <img
+      width={64}
+      height={64}
+      className="align-self-start mr-3"
+      src={content.user.avatar_url}
+      alt="user avatar"
+    />
+    <Media.Body>
+      <h5>{content.user.name}</h5>
+
+        <Linkify>{ ReactHtmlParser(tweetText) }</Linkify>
+
+      <br></br>
+      <small>{new Date(content.created_at).toLocaleString()}</small>
+    </Media.Body>
+  </Media>
+
   )
 }
