@@ -4,7 +4,6 @@ export default function Search({ callback }){
 
   const [search, setSearch] = useState("");
 
-}
   const handleSubmit = (evt) => {
       evt.preventDefault();
       const rawSearch = new FormData(evt.target);
